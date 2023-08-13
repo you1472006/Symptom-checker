@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom Checker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="h">Symptom Checker <br></h1>
+    <button id="toggleButton">to see the available symtoms click here</button>
+    <ol class="hidden" id="myList">
+        {% for disease in soso %}
+            <li style="background:none; padding: 2.5px;"><a>{{ disease.name }}</a></li>
+        {% endfor %}
+    </ol>
+    <form method="post" class="center">
+        
+       
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        
+        <button type="submit">Check Symptoms</button>
+        <p>write each symptom in line</p>
+    </form>
+</body>
+<script>
+    const toggleButton = document.getElementById("toggleButton");
+    const myList = document.getElementById("myList");
+  
+    toggleButton.addEventListener("click", () => {
+      myList.classList.toggle("hidden");
+    });
+  </script>
+</html>

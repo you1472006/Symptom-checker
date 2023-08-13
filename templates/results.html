@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom Checker Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1 class="h">Possible Diseases</h1>
+    <ol class="center">
+        {% for disease in suggested_diseases %}
+            <li><a href="{% url 'disease_detail' disease.id %}">{{ disease.name }}</a></li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
