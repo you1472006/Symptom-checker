@@ -15,6 +15,7 @@
     <p>{{ disease.medicine }}</p>
     <h2>Symptoms:</h2>
     <ul>
+       <!--loop to show the other symptoms -->
         {% for symptom in disease.symptoms.all %}
             <li class="a">{{ symptom.name }}</li>
         {% endfor %}
