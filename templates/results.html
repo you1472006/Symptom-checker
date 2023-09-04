@@ -8,7 +8,7 @@
 <body>
     <h1 class="h">Possible Diseases</h1>
     <ol class="center">
-        {% for disease in suggested_diseases %}
+        {% for disease in suggested_diseases %} <!--loop to show the available diseases-->
             <li><a href="{% url 'disease_detail' disease.id %}">{{ disease.name }}</a></li>
         {% endfor %}
     </ol>
