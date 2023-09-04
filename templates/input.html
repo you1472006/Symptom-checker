@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Symptom Checker</title>
-    {% load static %}
+    {% load static %}<!--to allow the css file to work-->
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <style>
         .hidden{
@@ -13,7 +13,7 @@
 <body>
     
     <h1 class="h">Symptom Checker <br></h1>
-    <button id="toggleButton">to see the available symptoms click here</button>
+    <button id="toggleButton">to see the available symptoms click here</button> <!--button to view the available symptoms in the website-->
     <ol class="hidden" id="myList">
         {% for disease in soso %}
             <li style="background:none; padding: 2.5px;"><a>{{ disease.name }}</a></li>
@@ -31,9 +31,10 @@
         <p>write each symptom in line</p>
     </form>
 </body>
+    <!--java script-->
 <script>
     const toggleButton = document.getElementById("toggleButton");
-    const myList = document.getElementById("myList");
+    const myList = document.getElementById("myList") ;//the id of the list
   
     toggleButton.addEventListener("click", () => {
       myList.classList.toggle("hidden");
